@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(ServiceException.class)
-    ResponseEntity<?> handleResourceNotFoundException(ServiceException ex) {
+    ResponseEntity<?> handleServiceException(ServiceException ex) {
         val errorResponse = ErrorResponse.builder()
                 .statusCode(ex.getStatusCode())
                 .message(ex.getMessage())

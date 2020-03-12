@@ -63,3 +63,38 @@ docker exec -it mysql mysql -uroot -p
 password: root
 ```
 
+------
+
+## Standard response headers
+
+### Response格式
+
+#### 错误请求的Response
+
+一定要用HTTP status code
+
+最简单的三类：
+
+OK 200
+
+Client side error: 4XX
+
+Service side error: 5XX
+
+```json
+{
+	"error": {
+    "code": "BadArgument",
+    "message": "desc",
+    "target": "Where is the error come from",
+    "details": [
+      {
+        "code": "NullValue",
+        "target": "PhoneNumber",
+        "message": "Phone number must not be null"
+      }
+    ]
+  }
+}
+```
+

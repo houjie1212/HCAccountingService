@@ -6,13 +6,13 @@ import com.hardcore.accounting.model.service.UserInfo;
 import lombok.extern.slf4j.Slf4j;
 import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@RestController("userControllerV1")
 @RequestMapping("v1/users")
 @Slf4j
 public class UserController {
@@ -28,9 +28,9 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public UserInfo getUserInfoByUserId(@PathVariable("id") Long userId) {
+    public ResponseEntity getUserInfoByUserId(@PathVariable("id") Long userId) {
         log.debug("Get user info by user id: {}", userId);
         val userInfo = userInfoManager.getUserInfoByUserId(userId);
-        return userInfoC2SConverter.convert(userInfo);
+        return ResponseEntity.ok(userInfoC2SConverter.convert(userInfo));
     }
 }

@@ -6,14 +6,14 @@ import com.hardcore.accounting.model.service.UserInfo;
 import lombok.extern.slf4j.Slf4j;
 import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Collections;
 
 @RestController("userControllerV1")
-@RequestMapping("v1/users")
+@RequestMapping("v1.0/users")
 @Slf4j
 public class UserController {
 
@@ -28,9 +28,19 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity getUserInfoByUserId(@PathVariable("id") Long userId) {
-        log.debug("Get user info by user id: {}", userId);
+    public ResponseEntity<UserInfo> getUserInfoByUserId(@PathVariable("id") Long userId) {
         val userInfo = userInfoManager.getUserInfoByUserId(userId);
         return ResponseEntity.ok(userInfoC2SConverter.convert(userInfo));
+    }
+
+    @PostMapping
+    public ResponseEntity<UserInfo> register(@RequestParam String username, @RequestParam String password) {
+        val userInfo = userInfoManager.register(username, password);
+        return ResponseEntity.ok(userInfoC2SConverter.convert(userInfo));
+    }
+
+    @GetMapping()
+    public ResponseEntity getUsers(@RequestParam Integer pageNum, @RequestParam Integer pageSize) {
+        return ResponseEntity.ok(Collections.emptyList());
     }
 }

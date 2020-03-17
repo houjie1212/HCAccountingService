@@ -7,7 +7,7 @@ public class InvalidParameterException extends ServiceException {
     public InvalidParameterException(String message) {
         super(message);
         this.setStatusCode(HttpStatus.BAD_REQUEST);
-        this.setErrorCode("Request param is not valid");
+        this.setErrorCode("Request_Param_Is_Invalid");
         this.setErrorType(ErrorType.Client);
     }
 }

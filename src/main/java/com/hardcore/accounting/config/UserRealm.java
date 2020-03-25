@@ -33,6 +33,10 @@ public class UserRealm extends AuthorizingRealm {
         // String password = new String((char[]) token.getCredentials());
 
         val userInfo = userInfoManager.getUserInfoByUsername(username);
-        return new SimpleAuthenticationInfo(username, userInfo.getPassword(), ByteSource.Util.bytes(userInfo.getSalt()), this.getName());
+        return new SimpleAuthenticationInfo(
+                username,
+                userInfo.getPassword(),
+                ByteSource.Util.bytes(userInfo.getSalt()),
+                this.getName());
     }
 }

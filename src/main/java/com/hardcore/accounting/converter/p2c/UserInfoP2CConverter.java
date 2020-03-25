@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
-@NoArgsConstructor
 public class UserInfoP2CConverter extends Converter<UserInfo, com.hardcore.accounting.model.common.UserInfo> {
 
     @Override

@@ -17,4 +17,5 @@ public interface UserInfoMapper {
 
     @Insert("INSERT INTO hcas_userinfo (username, password, salt, create_time) VALUES (#{username}, #{password}, #{salt}, #{createTime})")
     int createNewUser(UserInfo userInfo);
+
 }

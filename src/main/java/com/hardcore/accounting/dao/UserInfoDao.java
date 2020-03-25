@@ -9,4 +9,5 @@ public interface UserInfoDao {
     UserInfo getUserInfoByUsername(String username);
 
     void createNewUser(UserInfo userInfo);
+
 }

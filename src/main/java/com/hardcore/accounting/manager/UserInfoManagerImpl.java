@@ -72,4 +72,5 @@ public class UserInfoManagerImpl implements UserInfoManager {
         userInfoDao.createNewUser(newUserInfo);
         return userInfoP2CConverter.convert(newUserInfo);
     }
+
 }

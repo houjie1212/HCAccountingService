@@ -30,8 +30,8 @@ public class ShiroConfig {
 
         val shiroFilterMap = new LinkedHashMap<String, String>();
         // TODO consider different HTTP method may need different filter.
-        shiroFilterMap.put("/v1.0/session", "anon");
-        shiroFilterMap.put("/v1.0/users", "anon");
+        shiroFilterMap.put("/v1.0/session/*", "anon");
+        shiroFilterMap.put("/v1.0/users/*", "anon");
         shiroFilterMap.put("/**", "authc");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(shiroFilterMap);
         return shiroFilterFactoryBean;

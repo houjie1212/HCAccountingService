@@ -1,8 +1,8 @@
 package com.hardcore.accounting.converter.p2c;
 
-import com.google.common.base.Converter;
 import com.hardcore.accounting.model.persistence.UserInfo;
-import lombok.NoArgsConstructor;
+
+import com.google.common.base.Converter;
 import org.springframework.stereotype.Component;
 
 @Component

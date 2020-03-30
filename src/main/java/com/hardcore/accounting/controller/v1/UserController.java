@@ -3,11 +3,17 @@ package com.hardcore.accounting.controller.v1;
 import com.hardcore.accounting.converter.c2s.UserInfoC2SConverter;
 import com.hardcore.accounting.manager.UserInfoManager;
 import com.hardcore.accounting.model.service.UserInfo;
+
 import lombok.extern.slf4j.Slf4j;
 import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController("userControllerV1")
 @RequestMapping("v1.0/users")

@@ -1,6 +1,7 @@
 package com.hardcore.accounting.controller;
 
 import com.hardcore.accounting.model.service.Greeting;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

@@ -23,6 +23,11 @@ public class ShiroConfig {
         return securityManager;
     }
 
+    /**
+     * Shiro filter factory bean.
+     * @param securityManager security manager
+     * @return
+     */
     @Bean
     public ShiroFilterFactoryBean shiroFilterFactoryBean(SecurityManager securityManager) {
         val shiroFilterFactoryBean = new ShiroFilterFactoryBean();
@@ -37,6 +42,10 @@ public class ShiroConfig {
         return shiroFilterFactoryBean;
     }
 
+    /**
+     * Hashed credential matcher.
+     * @return
+     */
     @Bean
     public HashedCredentialsMatcher matcher() {
         val matcher = new HashedCredentialsMatcher();

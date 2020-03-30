@@ -6,6 +6,7 @@ import com.hardcore.accounting.dao.UserInfoDao;
 import com.hardcore.accounting.exception.InvalidParameterException;
 import com.hardcore.accounting.exception.ResourceNotFoundException;
 import com.hardcore.accounting.model.common.UserInfo;
+
 import lombok.val;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;

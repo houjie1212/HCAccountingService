@@ -3,9 +3,11 @@ package com.hardcore.accounting.converter.p2c;
 import com.hardcore.accounting.model.persistence.UserInfo;
 
 import com.google.common.base.Converter;
+import lombok.EqualsAndHashCode;
 import org.springframework.stereotype.Component;
 
 @Component
+@EqualsAndHashCode(callSuper = true)
 public class UserInfoP2CConverter extends Converter<UserInfo, com.hardcore.accounting.model.common.UserInfo> {
 
     @Override

@@ -23,7 +23,7 @@ public class UserInfoC2SConverter extends Converter<UserInfo, com.hardcore.accou
         // throw new UnsupportedOperationException(); // 不支持反向转换
         return UserInfo.builder()
                 .id(userInfo.getId())
-                .username((userInfo.getUsername()))
+                .username(userInfo.getUsername())
                 .build();
     }
 }

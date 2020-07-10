@@ -8,5 +8,5 @@ import lombok.Data;
 public class UserInfo {
     private Long id;
     private String username;
-
+    private String password;
 }

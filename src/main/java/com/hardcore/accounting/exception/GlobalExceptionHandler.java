@@ -38,7 +38,7 @@ public class GlobalExceptionHandler {
         val errorResponse = ErrorResponse.builder()
                 .statusCode(HttpStatus.BAD_REQUEST.value())
                 .message(ex.getMessage())
-                .code("Bad_Request")
+                .code("BAD_REQUEST")
                 .errorType(ServiceException.ErrorType.Client)
                 .build();
         return ResponseEntity.status(errorResponse.getStatusCode()).body(errorResponse);

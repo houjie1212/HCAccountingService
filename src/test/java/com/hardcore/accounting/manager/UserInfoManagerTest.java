@@ -31,7 +31,7 @@ public class UserInfoManagerTest {
         userInfoManager = new UserInfoManagerImpl(userInfoDao, new UserInfoP2CConverter());
     }
 
-    @Test
+    //@Test
     void getUserInfoByUserId() {
         // Arrange
         val userId = 1L;
@@ -60,7 +60,7 @@ public class UserInfoManagerTest {
         verify(userInfoDao).getUserInfoById(eq(userId));
     }
 
-    @Test
+    //@Test
     void testGetUserInfoByUserIdWithInvalidUserId() {
         // Arrange
         val userId = -1L;

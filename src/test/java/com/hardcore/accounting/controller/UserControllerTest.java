@@ -74,7 +74,7 @@ public class UserControllerTest {
         mockMvc.perform(get("/v1.0/users/" + userId))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json"))
-                .andExpect(content().string("{\"id\":10,\"username\":\"hardcore\"}"));
+                .andExpect(content().string("{\"id\":10,\"username\":\"hardcore\",\"password\":null}"));
 
         verify(userInfoManager).getUserInfoByUserId(userId);
         verify(userInfoC2SConverter).convert(userInfoCommon);
